@@ -11,9 +11,7 @@ const Home = () => {
                     </div>
                     <button className="home-button">Find your van</button>
                 </div>
-                <footer className="home-footer">
-                    <p>Ⓒ 2022 #VANLIFE</p>
-                </footer>
+
             </main>
         </>
     )

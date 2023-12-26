@@ -32,6 +32,13 @@
   line-height: 1.43269rem; /* 143.267% */
 }
 
+.nav-links {
+  font-family: Inter;
+  font-size: 1rem;
+  color: #4D4D4D;
+  font-weight: 600;
+}
+
 .van-life-span {
   color: #000;
   font-family: Inter;
@@ -134,3 +141,86 @@
   line-height: 1.43269rem; /* 163.733% */
   width: 100%;
 }
+
+.about-container {
+  background: #FFF7ED;
+  height: 100vh;
+}
+
+.about-picture-container {
+  background: url('../public/van-outdoor-night.png'), lightgray 50% / cover no-repeat;
+  /* width: 34.25944rem;
+  max-width: 100%;
+  height: 14.57581rem; */
+  width: 100%;
+  height: 14.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* flex-shrink: 0; */
+  margin: 0 auto;
+}
+
+.about-text-container {
+  width: 30.875rem;
+  margin: 2rem auto;
+}
+
+.about-h1 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.375rem; /* 118.75% */
+}
+
+.about-p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.375rem; /* 137.5% */
+  margin: 1.5em auto;
+}
+
+.about-destination-container {
+  border-radius: 0.3125rem;
+  background: #FFCC8D;
+  width: 30.875rem;
+  height: 12.375rem;
+  flex-shrink: 0;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.about-destination-h2 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.875rem; /* 125% */
+}
+
+.about-destination-button {
+  display: inline-flex;
+  padding: 0.75rem 1.375rem 0.8125rem 1.375rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.625rem;
+  background: #161616;
+  border: none;
+  color: var(--white, #FFF);
+  font-family: Inter;
+  font-size: 0.99663rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.49494rem; /* 150% */
+  margin: 1.5em auto;
+}
+
+
+
