@@ -118,6 +118,15 @@
   height: 3.1145rem;
   flex-shrink: 0;
   margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  text-decoration: underline;
 }
 
 .home-footer {
@@ -220,6 +229,12 @@
   font-weight: 700;
   line-height: 1.49494rem; /* 150% */
   margin: 1.5em auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.about-destination-button:hover {
+  text-decoration: underline;
 }
 
 

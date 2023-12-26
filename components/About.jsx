@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 const About = () => {
     return (
@@ -27,7 +28,7 @@ const About = () => {
                 <div className="about-destination-container">
                     <h2 className="about-destination-h2">Your destination is waiting.</h2>
                     <h2 className="about-destination-h2">Your van is ready.</h2>
-                    <button className="about-destination-button">Explore our vans</button>
+                    <Link className="about-destination-button">Explore our vans</Link>
                 </div>
             </div>
         </>
