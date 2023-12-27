@@ -8,6 +8,10 @@ import Footer from "../components/Footer"
 import Vans from "../components/Vans"
 import VansHeader from "../components/VansHeader"
 import VanDetail from "../components/VanDetail"
+import Layout from "../components/Layout"
+import Dashboard from "../components/Host/Dashboard.jsx"
+import Income from "../components/Host/Income.jsx"
+import Reviews from "../components/Host/Reviews.jsx"
 
 import "/server.js"
 
@@ -45,10 +49,15 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<><Nav /> <Home /><Footer /></>} />
-          <Route path="/about" element={<><Nav /><About /><Footer /></>} />
-          <Route path="/vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
-          <Route path="/vans/:id" element={<VanDetail />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<><Nav /> <Home /><Footer /></>} />
+            <Route path="/about" element={<><Nav /><About /><Footer /></>} />
+            <Route path="/vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
+            <Route path="/vans/:id" element={<VanDetail />} />
+            <Route path="/host/dashboard" element={<Dashboard />} />
+            <Route path="/host/Income" element={<Income />} />
+            <Route path="/host/Reviews" element={<Reviews />} />
+          </Route>
       </Routes>
       </BrowserRouter>
     </>
