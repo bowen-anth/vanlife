@@ -296,13 +296,20 @@
 
 /* Vans: Start */
 
+.vanCards-grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: calc(48% - 1em);
+  justify-content: center;
+}
+
 .vans-main-container {
   border: 2px solid gray;
   padding: 2em;
   width: 14rem;
   display: flex;
   flex-direction: column;
-
 }
 
 .vans-image {
