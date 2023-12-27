@@ -30,6 +30,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.43269rem; /* 143.267% */
+  background: #FFF7ED;
 }
 
 .nav-links {
@@ -129,11 +130,11 @@
   text-decoration: underline;
 }
 
-.home-footer {
+.footer {
   background: #252525;
   display: flex;
   width: 34.25944rem;
-  height: 4.67175rem;
+  height: 2.67175rem;
   padding: 1.60506rem 6.64275rem 1.57175rem 6.625rem;
   justify-content: center;
   align-items: center;
@@ -154,6 +155,7 @@
 .about-container {
   background: #FFF7ED;
   height: 100vh;
+  padding: 1em;
 }
 
 .about-picture-container {
@@ -302,36 +304,67 @@
   flex-wrap: wrap;
   flex-basis: calc(48% - 1em);
   justify-content: center;
+  height: 100vh;
+  padding-bottom: 8.67175rem;
 }
 
 .vans-main-container {
-  border: 2px solid gray;
-  padding: 2em;
+  /* border: 2px solid gray; */
+  padding: .5em;
   width: 14rem;
   display: flex;
   flex-direction: column;
+  padding-bottom: 5rem;
 }
 
 .vans-image {
   width: 100%;
+  border-radius: 0.3125rem;
 }
 
 .vans-info-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 2px solid red;
+  flex-grow: 0;
+  /* border: 2px solid red; */
 }
 
 .vans-model-name-span {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.97888rem; /* 158.308% */
+}
 
+.vans-price-span {
+  color: #161616;
+  text-align: right;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.97888rem; /* 158.308% */
+}
+
+.vans-day-span {
+  color: #161616;
+  text-align: right;
+  font-family: 'Avenir Next';
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.97888rem;
+  margin-top: -.75em;
 }
 
 .vans-price-container {
   display: flex;
   justify-content: space-between;
   margin: 1em 0;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .vans-button {
@@ -353,6 +386,14 @@
   line-height: 1.97888rem; /* 197.885% */
   border: none;
   align-items: center;
+}
+
+.rugged {
+  background-color: #115E59;
+}
+
+.luxury {
+  background-color: #161616;
 }
 
 /* Vans: End */
