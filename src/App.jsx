@@ -51,16 +51,16 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<><Nav /> <Home /><Footer /></>} />
-            <Route path="/about" element={<><Nav /><About /><Footer /></>} />
-            <Route path="/vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
-            <Route path="/vans/:id" element={<VanDetail />} />
+            <Route index element={<><Nav /> <Home /><Footer /></>} />
+            <Route path="about" element={<><Nav /><About /><Footer /></>} />
+            <Route path="vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
+            <Route path="vans/:id" element={<VanDetail />} />
 
 
-            <Route path="/host" element={<HostLayout />}>
-              <Route path="/host/" element={<Dashboard />} />
-              <Route path="/host/income" element={<Income />} />
-              <Route path="/host/reviews" element={<Reviews />} />
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="reviews" element={<Reviews />} />
             </Route>
           </Route>
         </Routes>

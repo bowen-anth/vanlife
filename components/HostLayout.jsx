@@ -8,8 +8,8 @@ const HostLayout = () => {
         <>
             <nav className="host-nav">
                 <Link className="link-styles" to="/host">Dashboard</Link>
-                <Link className="link-styles" to="/host/income">Income</Link>
-                <Link className="link-styles" to="/host/reviews">Reviews</Link>
+                <Link className="link-styles" to="income">Income</Link>
+                <Link className="link-styles" to="reviews">Reviews</Link>
                 <Outlet />
             </nav>
         </>
