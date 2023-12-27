@@ -20,6 +20,18 @@
   text-decoration: underline;
 }
 
+.link-no-decoration {
+  text-decoration: none;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1)
+}
+
 .nav-link-container {
   display: flex;
   gap: 1em;

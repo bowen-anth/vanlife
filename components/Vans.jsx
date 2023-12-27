@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const Vans = (props) => {
 
@@ -11,24 +12,29 @@ const Vans = (props) => {
         <>
             <div className="vans-main-container">
 
-             
-                <img 
-                className="vans-image"
-                src={props.imageUrl}
-                alt=""
-                width="200px"
-                height="auto"
-                />
-                    
-                    <div className="vans-price-container">
-                        <span className="vans-model-name-span">{props.name}</span>
-                        <div className="vans-price-per-day-container">
-                            <span className="vans-price-span">${props.price}</span>
-                            <p className="vans-day-span">/day</p>
+                 <Link 
+                 className="link-no-decoration grow" 
+                 to={`/vans/${props.id}`}
+                 aria-label={`View details for ${props.name}, priced at $${props.price} per day`}
+                 >
+                    <img 
+                    className="vans-image"
+                    src={props.imageUrl}
+                    alt={`Image of ${props.name}`}
+                    width="200px"
+                    height="auto"
+                    />
+                        
+                        <div className="vans-price-container">
+                            <span className="vans-model-name-span">{props.name}</span>
+                            <div className="vans-price-per-day-container">
+                                <span className="vans-price-span">${props.price}</span>
+                                <p className="vans-day-span">/day</p>
+                            </div>
                         </div>
-                    </div>
-                    <button className={`vans-button ${props.type}`}>{capitalizeFirstLetter(props.type)}</button>
-                </div>
+                        <button className={`vans-button ${props.type}`}>{capitalizeFirstLetter(props.type)}</button>
+                </Link>
+            </div>
 
             
         </>

@@ -7,6 +7,7 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Vans from "../components/Vans"
 import VansHeader from "../components/VansHeader"
+import VanDetail from "../components/VanDetail"
 
 import "/server.js"
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/" element={<><Nav /> <Home /><Footer /></>} />
           <Route path="/about" element={<><Nav /><About /><Footer /></>} />
           <Route path="/vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
+          <Route path="/vans/:id" element={<VanDetail />} />
       </Routes>
       </BrowserRouter>
     </>
