@@ -5,13 +5,14 @@ import Home from "../components/Home"
 import About from "../components/About"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import Vans from "../components/Vans"
+import Vans from "../components/pages/Vans/Vans"
 import VansHeader from "../components/VansHeader"
-import VanDetail from "../components/VanDetail"
+import VanDetail from "../components/pages/Vans/VanDetail"
 import Layout from "../components/Layout"
-import Dashboard from "../components/Host/Dashboard.jsx"
-import Income from "../components/Host/Income.jsx"
-import Reviews from "../components/Host/Reviews.jsx"
+import Dashboard from "../components/pages/Host/Dashboard"
+import Income from "../components/pages/Host/Income"
+import Reviews from "../components/pages/Host/Reviews"
+import HostLayout from "../components/HostLayout"
 
 import "/server.js"
 
@@ -54,14 +55,18 @@ function App() {
             <Route path="/about" element={<><Nav /><About /><Footer /></>} />
             <Route path="/vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
             <Route path="/vans/:id" element={<VanDetail />} />
-            <Route path="/host/dashboard" element={<Dashboard />} />
-            <Route path="/host/Income" element={<Income />} />
-            <Route path="/host/Reviews" element={<Reviews />} />
+
+
+            <Route path="/host" element={<HostLayout />}>
+              <Route path="/host/" element={<Dashboard />} />
+              <Route path="/host/income" element={<Income />} />
+              <Route path="/host/reviews" element={<Reviews />} />
+            </Route>
           </Route>
-      </Routes>
+        </Routes>
       </BrowserRouter>
     </>
   )
 }
 
-export default App
+export default App;

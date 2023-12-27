@@ -1,5 +1,7 @@
 import React from "react"
 
+import Reviews from "./Reviews"
+
 const Income = () => {
     return (
         <>
