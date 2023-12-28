@@ -2,6 +2,7 @@ import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
 import Income from "./pages/Host/Income"
 import Reviews from "./pages/Host/Reviews"
+import HostVans from "./pages/Host/HostVans"
 
 const HostLayout = () => {
     const activeStyle = {
@@ -25,6 +26,14 @@ const HostLayout = () => {
                 style={({isActive}) => isActive ? activeStyle : null}  
                 to="income">
                     Income
+                </NavLink>
+
+                <NavLink 
+                className="link-styles"
+                style={({isActive}) => isActive ? activeStyle : null}  
+                to="vans"
+                >
+                    Vans
                 </NavLink>
                 
                 <NavLink 
