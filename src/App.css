@@ -494,3 +494,109 @@ line-height: 2.7595rem; /* 183.967% */
 }
 
 /* VanDetail: End */
+
+/* HostVans: Start */
+
+.host-vans-van-container {
+  border-radius: 0.375rem;
+  background: #FFF;
+  width: 30.875rem;
+  height: 6.375rem;
+  flex-shrink: 0;
+  display: flex;
+  margin: 1em;
+}
+
+.host-vans-van-container > img {
+  width: 4.11731rem;
+  height: 4.11731rem;
+  flex-shrink: 0;
+}
+
+/* HostVans: End */
+
+/* Host Vans Detail: Start */
+
+.host-van-detail-container {
+  /* display: flex; */
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  width: 31rem;
+  height: 31.1875rem;
+  border-radius: 0.375rem;
+  background: #FFF;
+  margin: 0 auto;
+  gap: 10px;
+  border: 1px solid green;
+}
+
+.host-van-container > img {
+  width: 10.00938rem;
+  height: 9.86894rem;
+  flex-shrink: 0;
+  border-radius: 0.3125rem;
+  display: inline-block;
+  border: 1px solid red;
+}
+
+.host-van-container {
+  display: flex;
+}
+
+.host-van-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* display: inline-block; */
+  border: 2px solid gray;
+  width: 16.54169rem;
+  margin-left: 1em;
+  /* width: 10.00938rem; */
+  height: 9.86894rem;
+  /* flex-shrink: 0; */
+  gap: 10px;
+}
+
+.host-van-name-p {
+  color: #161616;
+font-family: Inter;
+font-size: 1.62863rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.71275rem; /* 105.164% */
+}
+
+.host-van-info-container > button {
+  border-radius: 0.2545rem;
+  background: #E17654;
+  width: 4.36225rem;
+  height: 1.72463rem;
+  flex-shrink: 0;
+}
+
+.host-van-detail-link-container {
+  gap: 10px;
+  border: 2x solid blue;
+  width: 15rem;
+  display: block;
+}
+
+.host-van-price-p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.2215rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.24713rem; /* 183.967% */
+}
+
+.detail-day > span {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.01788rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.24713rem;
+}
+
+/* Host Vans Detail: End */
