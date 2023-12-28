@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
 import Home from "../components/Home"
 import About from "../components/About"
 import Nav from "../components/Nav"
@@ -15,12 +15,6 @@ import Reviews from "../components/pages/Host/Reviews"
 import HostLayout from "../components/HostLayout"
 
 import "/server.js"
-
-
-
-
-
-
 
 function App() {
 
@@ -51,11 +45,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route index element={<><Nav /> <Home /><Footer /></>} />
-            <Route path="about" element={<><Nav /><About /><Footer /></>} />
-            <Route path="vans" element={<><Nav /> <VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
+            <Route index element={<><Home /><Footer /></>} />
+            <Route path="about" element={<><About /><Footer /></>} />
+            <Route path="vans" element={<><VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
             <Route path="vans/:id" element={<VanDetail />} />
-
 
             <Route path="host" element={<HostLayout />}>
               <Route index element={<Dashboard />} />
