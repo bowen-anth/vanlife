@@ -25,7 +25,7 @@ const VanDetail = () => {
                         <div className="van-info-container">
                             <button className={`van-type ${van.type} selected`}>{van.type}</button>
                             <h2>{van.name}</h2>
-                            <p className="van-price"><span>${van.price}</span>/day</p>
+                            <p className="van-price">${van.price}<span className="day-span">/day</span></p>
                             <p className="van-description-p">{van.description}</p>
                             <button className="van-link-button">Rent this van</button>
                         </div>

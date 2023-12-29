@@ -1,7 +1,12 @@
 import React from "react"
 import { useParams, NavLink } from "react-router-dom"
 
-const HostVanDetail = (props) => {
+const HostVanDetail = () => {
+
+        const activeStyle = {
+            fontWeight: 900,
+            textDecoration: "underline"
+          }
 
     const { id } = useParams()
     const [currentVan, setCurrentVan] = React.useState(null)
@@ -11,13 +16,10 @@ const HostVanDetail = (props) => {
         .then(res => res.json())
         .then(data => setCurrentVan(data.vans))
     }, [])
-// console.log('currentVan', currentVan)
-// console.log('name', currentVan.name)
-    // const hostVanDetailCard = currentVan.vans.map((van) => {
-    //     return (
-    //         <p>{van.title}</p>
-    //     )
-    // })
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
 
     if (!currentVan) {
         return <h1>Loading...</h1>
@@ -31,16 +33,36 @@ const HostVanDetail = (props) => {
                     <div className="host-van-info-container">
                         <button>{currentVan.type}</button>
                         <p className="host-van-name-p">{currentVan.name}</p>
-                        <p className="host-van-price-p">{currentVan.price}<span className="detail-day-span">/day</span></p>
+                        <p className="host-van-price-p">${currentVan.price}<span className="detail-day-span">/day</span></p>
                     </div>
                 </div>
-                
                 <div className="host-van-detail-link-container">
-                    <NavLink to="">Details</NavLink>
-                    <NavLink to="">Pricing</NavLink>
-                    <NavLink to="">Photos</NavLink>
+                    <NavLink 
+                    className="host-van-navlink" 
+                    end
+                    to=""
+                    style={({isActive}) => isActive ? activeStyle : null} 
+                    >
+                        Details
+                    </NavLink>
+                    <NavLink 
+                    className="host-van-navlink" 
+                    to="pricing"
+                    style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Pricing
+                    </NavLink>
+                    <NavLink className="host-van-navlink" 
+                    to="photos"
+                    style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Photos
+                    </NavLink>
                 </div>
-
+                <p className="host-van-info-p"><span className="host-van-bold-span">Name: </span>{currentVan.name}</p>
+                <p className="host-van-info-p"><span className="host-van-bold-span">Category: </span>{capitalizeFirstLetter(currentVan.type)}</p>
+                <p className="host-van-info-p"><span className="host-van-bold-span">Description: </span>{currentVan.description}</p>
+                <p className="host-van-info-p"><span className="host-van-bold-span">Visibility: </span>Public</p>
             </div>
         </>
     )

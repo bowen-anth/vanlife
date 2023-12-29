@@ -527,7 +527,8 @@ line-height: 2.7595rem; /* 183.967% */
   background: #FFF;
   margin: 0 auto;
   gap: 10px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  padding: 2em;
 }
 
 .host-van-container > img {
@@ -536,11 +537,11 @@ line-height: 2.7595rem; /* 183.967% */
   flex-shrink: 0;
   border-radius: 0.3125rem;
   display: inline-block;
-  border: 1px solid red;
 }
 
 .host-van-container {
   display: flex;
+  margin-bottom: 1em;
 }
 
 .host-van-info-container {
@@ -548,7 +549,7 @@ line-height: 2.7595rem; /* 183.967% */
   flex-direction: column;
   justify-content: center;
   /* display: inline-block; */
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   width: 16.54169rem;
   margin-left: 1em;
   /* width: 10.00938rem; */
@@ -572,13 +573,13 @@ line-height: 1.71275rem; /* 105.164% */
   width: 4.36225rem;
   height: 1.72463rem;
   flex-shrink: 0;
+  border: none;
 }
 
 .host-van-detail-link-container {
   gap: 10px;
-  border: 2x solid blue;
-  width: 15rem;
-  display: block;
+  /* border: 2x solid blue; */
+
 }
 
 .host-van-price-p {
@@ -590,13 +591,48 @@ line-height: 1.71275rem; /* 105.164% */
   line-height: 2.24713rem; /* 183.967% */
 }
 
-.detail-day > span {
+.detail-day-span {
   color: #161616;
   font-family: Inter;
   font-size: 1.01788rem;
   font-style: normal;
   font-weight: 500;
   line-height: 2.24713rem;
+}
+
+.host-van-navlink {
+  width: 15rem;
+  width: 3.70088rem;
+  height: 1.17756rem;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.00931rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.28538rem; /* 127.348% */
+  text-decoration: none;
+  margin-right: 1.5em;
+}
+
+.host-van-bold-span {
+  color: #161616;
+  font-family: Inter;
+  font-size: 0.89719rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.34125rem; /* 149.496% */
+}
+
+.host-van-info-p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 0.89719rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.34125rem;
+  margin: 1em 0;
 }
 
 /* Host Vans Detail: End */
