@@ -415,7 +415,20 @@
   color: #FFEAD0 !important;
 }
 
+.simple-hover:hover {
+  background: #FF8C38;
+  color: #FFEAD0;
+}
 
+.rugged-hover:hover {
+  background-color: #115E59;
+  color: #FFEAD0;
+}
+
+.luxury-hover:hover {
+  background-color: #161616;
+  color: #FFEAD0;
+}
 
 
 /* Vans: End */

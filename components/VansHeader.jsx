@@ -13,19 +13,19 @@ const VansHeader = () => {
                     <h1 className="vansHeader-h1">Explore our van options</h1>
                     <div className="vansHeader-button-container">
                         <button                                                              
-                        className={typeFilter === "simple" ? "vansHeader-button simple selected" : "vansHeader-button"}
+                        className={typeFilter === "simple" ? "vansHeader-button simple selected" : "vansHeader-button simple-hover"}
                         onClick={() => setSearchParams({type: "simple"})}
                         >
                             Simple
                         </button>
                         <button 
-                        className={typeFilter === "luxury" ? "vansHeader-button luxury selected" : "vansHeader-button"}
+                        className={typeFilter === "luxury" ? "vansHeader-button luxury selected" : "vansHeader-button luxury-hover"}
                         onClick={() => setSearchParams({type: "luxury"})}
                         >
                             Luxury
                         </button>
                         <button 
-                        className={typeFilter === "rugged" ? "vansHeader-button rugged selected" : "vansHeader-button"}
+                        className={typeFilter === "rugged" ? "vansHeader-button rugged selected" : "vansHeader-button rugged-hover"}
                         onClick={() => setSearchParams({type: "rugged"})}                    
                         >
                             Rugged
