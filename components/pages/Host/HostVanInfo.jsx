@@ -1,10 +1,11 @@
 import React from "react"
-import { NavLink, useParams } from "react-router-dom"
+import { NavLink, useParams, useOutletContext } from "react-router-dom"
 
 const HostVanInfo = () => {
 
     const { id } = useParams()
-    const [currentVan, setCurrentVan] = React.useState(null)
+    // const [currentVan, setCurrentVan] = React.useState(null)
+    const [currentVan, setCurrentVan] = useOutletContext()
 
     React.useEffect(() => {
         fetch(`/api/host/vans/${id}`)
