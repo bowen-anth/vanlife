@@ -5,7 +5,7 @@ const HostVanInfo = () => {
 
     const { id } = useParams()
     // const [currentVan, setCurrentVan] = React.useState(null)
-    const [currentVan, setCurrentVan] = useOutletContext()
+    const { currentVan } = useOutletContext()
 
     React.useEffect(() => {
         fetch(`/api/host/vans/${id}`)

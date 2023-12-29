@@ -24,28 +24,6 @@ import "/server.js"
 
 function App() {
 
-  const [vanData, setVanData] = React.useState([])
-
-  React.useEffect(function() {
-    console.log("Effect ran")
-    fetch("/api/vans")
-      .then(res => res.json())
-      .then(data => setVanData(data.vans))
-  }, [])
-
-  console.log('vanData', vanData)
-
-  const VAN_MAX = 12;
-
-  const vanCards = vanData.slice(0, VAN_MAX).map(van => {
-    return (
-      <Vans 
-      key={van.id}
-      {...van}
-      />
-    )
-  })
-
   return (
     <>
       <BrowserRouter>
@@ -53,7 +31,7 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<><Home /><Footer /></>} />
             <Route path="about" element={<><About /><Footer /></>} />
-            <Route path="vans" element={<><VansHeader /> <div className="vanCards-grid-container">{vanCards}</div> <Footer /></>} />
+            <Route path="vans" element={<><VansHeader /> <div className="vanCards-grid-container"><Vans /></div> <Footer /></>} />
             <Route path="vans/:id" element={<VanDetail />} />
 
             <Route path="host" element={<HostLayout />}>

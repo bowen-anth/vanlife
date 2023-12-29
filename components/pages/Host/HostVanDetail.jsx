@@ -63,7 +63,7 @@ const HostVanDetail = () => {
                     >
                         Photos
                     </NavLink>
-                    <Outlet context={[currentVan, setCurrentVan]}/>
+                    <Outlet context={{currentVan}}/>
                 </div>
             </div>
         </>

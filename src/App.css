@@ -657,3 +657,29 @@ line-height: 1.71275rem; /* 105.164% */
 }
 
 /* Host Vans Detail: End */
+
+/* Host Van Photos: Start */
+
+.host-van-detail-image {
+  height: 100px;
+  border-radius: 5px;
+  display: block;
+  margin-top: 1em;
+}
+
+/* Host Van Photos: End */
+
+/* Host Van Pricing: Start */
+
+.host-van-price {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 1em;
+}
+
+.host-van-price > span {
+  font-size: 16px;
+  color: #4D4D4D;
+}
+
+/* Host Van Pricing: End */
