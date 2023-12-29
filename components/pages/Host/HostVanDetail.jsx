@@ -40,7 +40,7 @@ const HostVanDetail = () => {
                     <NavLink 
                     className="host-van-navlink" 
                     end
-                    to=""
+                    to="."
                     style={({isActive}) => isActive ? activeStyle : null} 
                     >
                         Details

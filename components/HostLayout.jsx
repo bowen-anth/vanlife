@@ -16,7 +16,7 @@ const HostLayout = () => {
                 className="link-styles"
                 style={({isActive}) => isActive ? activeStyle : null} 
                 end
-                to="/host"
+                to="."
                 >
                     Dashboard
                 </NavLink>
