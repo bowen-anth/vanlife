@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams, NavLink } from "react-router-dom"
+import { useParams, NavLink, Outlet } from "react-router-dom"
 
 const HostVanDetail = () => {
 
@@ -63,11 +63,8 @@ const HostVanDetail = () => {
                     >
                         Photos
                     </NavLink>
+                    <Outlet />
                 </div>
-                <p className="host-van-info-p"><span className="host-van-bold-span">Name: </span>{currentVan.name}</p>
-                <p className="host-van-info-p"><span className="host-van-bold-span">Category: </span>{capitalizeFirstLetter(currentVan.type)}</p>
-                <p className="host-van-info-p"><span className="host-van-bold-span">Description: </span>{currentVan.description}</p>
-                <p className="host-van-info-p"><span className="host-van-bold-span">Visibility: </span>Public</p>
             </div>
         </>
     )

@@ -1,8 +1,8 @@
 import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
-import Income from "./pages/Host/Income"
-import Reviews from "./pages/Host/Reviews"
-import HostVans from "./pages/Host/HostVans"
+// import Income from "./pages/Host/Income"
+// import Reviews from "./pages/Host/Reviews"
+// import HostVans from "./pages/Host/HostVans"
 
 const HostLayout = () => {
     const activeStyle = {
