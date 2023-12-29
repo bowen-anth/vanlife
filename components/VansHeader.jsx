@@ -12,7 +12,7 @@ const VansHeader = () => {
                 <div className="vansHeader-header-container">
                     <h1 className="vansHeader-h1">Explore our van options</h1>
                     <div className="vansHeader-button-container">
-                        <button 
+                        <button                                                              
                         className={typeFilter === "simple" ? "vansHeader-button simple selected" : "vansHeader-button"}
                         onClick={() => setSearchParams({type: "simple"})}
                         >

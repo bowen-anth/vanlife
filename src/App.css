@@ -401,18 +401,18 @@
 }
 
 .simple {
-  background: #FF8C38;
-  color: #FFEAD0;
+  background: #FF8C38 !important;
+  color: #FFEAD0 !important;
 }
 
 .rugged {
-  background-color: #115E59;
-  color: #FFEAD0;
+  background-color: #115E59 !important;
+  color: #FFEAD0 !important;
 }
 
 .luxury {
-  background-color: #161616;
-  color: #FFEAD0;
+  background-color: #161616 !important;
+  color: #FFEAD0 !important;
 }
 
 
@@ -586,7 +586,7 @@ font-weight: 700;
 line-height: 1.71275rem; /* 105.164% */
 }
 
-.host-van-info-container > button {
+.host-van-info-container-button {
   border-radius: 0.2545rem;
   background: #E17654;
   width: 4.36225rem;

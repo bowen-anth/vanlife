@@ -30,7 +30,7 @@ const Vans = () => {
 
       <NavLink 
       className="link-no-decoration grow" 
-      to={`/vans/${van.id}`}
+      to={van.id}
       aria-label={`View details for ${van.name}, priced at $${van.price} per day`}
       >
          <img 

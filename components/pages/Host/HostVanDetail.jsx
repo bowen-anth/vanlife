@@ -36,7 +36,7 @@ const HostVanDetail = () => {
                 <div className="host-van-container">
                 <img src={currentVan.imageUrl} width={150} />
                     <div className="host-van-info-container">
-                        <button>{currentVan.type}</button>
+                        <button className={`host-van-info-container-button ${currentVan.type}`}>{capitalizeFirstLetter(currentVan.type)}</button>
                         <p className="host-van-name-p">{currentVan.name}</p>
                         <p className="host-van-price-p">${currentVan.price}<span className="detail-day-span">/day</span></p>
                     </div>

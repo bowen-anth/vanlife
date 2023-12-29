@@ -2,7 +2,6 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 
 const HostVans = () => {
-// console.log('props', props)
 
     const [hostVanData, setHostVanData] = React.useState([])
 
@@ -16,7 +15,7 @@ const HostVans = () => {
 
     const hostVanCard = hostVanData.map(van => {
         return (
-            <NavLink to={`/host/vans/${van.id}`}>
+            <NavLink to={van.id}>
                 <div className="host-vans-van-container" key={van.id}>
                 <img src={van.imageUrl}
                     width="400px"
