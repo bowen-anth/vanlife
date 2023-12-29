@@ -13,13 +13,13 @@ const Nav = () => {
                     <div className="nav-link-container">
                         <NavLink className="link-styles nav-links" 
                         style={({isActive}) => isActive ? activeStyle : null}
-                        to="/host">Host</NavLink>
+                        to="host">Host</NavLink>
                         <NavLink className="link-styles nav-links" 
                         style={({isActive}) => isActive ? activeStyle : null}
-                        to="/about">About</NavLink>
+                        to="about">About</NavLink>
                         <NavLink className="link-styles nav-links" 
                         style={({isActive}) => isActive ? activeStyle : null}
-                        to="/vans">Vans</NavLink>
+                        to="vans">Vans</NavLink>
                     </div>
                 </nav>
         </>
