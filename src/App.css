@@ -400,6 +400,11 @@
   align-items: center;
 }
 
+.simple {
+  background: #FF8C38;
+  color: #FFEAD0;
+}
+
 .rugged {
   background-color: #115E59;
   color: #FFEAD0;
@@ -409,6 +414,9 @@
   background-color: #161616;
   color: #FFEAD0;
 }
+
+
+
 
 /* Vans: End */
 
