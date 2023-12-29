@@ -31,6 +31,7 @@ const Vans = () => {
       <NavLink 
       className="link-no-decoration grow" 
       to={van.id}
+      state={{ search: searchParams.toString() }}
       aria-label={`View details for ${van.name}, priced at $${van.price} per day`}
       >
          <img 
