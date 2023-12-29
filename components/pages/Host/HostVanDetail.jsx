@@ -27,6 +27,11 @@ const HostVanDetail = () => {
 
     return (
         <>
+            <NavLink
+                to=".."
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to all vans</span></NavLink>
             <div className="host-van-detail-container">
                 <div className="host-van-container">
                 <img src={currentVan.imageUrl} width={150} />
