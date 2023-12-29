@@ -1,7 +1,7 @@
 import React from "react"
 import { NavLink, useSearchParams } from "react-router-dom"
 
-const Vans = (props) => {
+const Vans = () => {
 
     const [vanData, setVanData] = React.useState([])
 
@@ -16,9 +16,9 @@ const Vans = (props) => {
     
     const typeFilter = searchParams.get("type")
     
-    const filteredVans = typeFilter.toLowerCase()
-    ? vanData.filter(van => van.type.toLowerCase() === typeFilter)
-    : vanData
+    const filteredVans = typeFilter
+            ? vanData.filter(van => van.type === typeFilter)
+            : vanData
 
   const VAN_MAX = 12;
 
@@ -73,10 +73,11 @@ const Vans = (props) => {
     return (
         <>
         {vanData ? (
-            vanElements
-        ) : <h1>Loading</h1>
-        }
-        </>
+          vanElements
+        ) : (
+          <h2>Loading...</h2>
+        )}
+      </>
     )
 }
 
