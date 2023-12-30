@@ -710,3 +710,43 @@ line-height: 1.71275rem; /* 105.164% */
 }
 
 /* Host Van Pricing: End */
+
+/* Not Found Page: Start */
+
+.not-found-container {
+  margin: 1em;
+  width: 30.89581rem;
+}
+
+.not-found-h1 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.625rem; /* 131.25% */
+  margin-bottom: 1em;
+}
+
+.return-to-home-button {
+  border-radius: 0.31144rem;
+  background: #161616;
+  border: none;
+  width: 24rem;
+  height: 3.4375rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.97888rem; /* 175.898% */
+  align-items: center;
+}
+
+/* Not Found Page: End */
