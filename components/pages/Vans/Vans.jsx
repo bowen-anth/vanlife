@@ -33,7 +33,7 @@ const Vans = () => {
         loadVans()
     }, [])
     
-console.log(vanData)
+console.log('Vans', vanData)
     
     const filteredVans = typeFilter
             ? vanData.filter(van => van.type === typeFilter)

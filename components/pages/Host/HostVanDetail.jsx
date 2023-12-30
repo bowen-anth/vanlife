@@ -1,21 +1,48 @@
 import React from "react"
 import { useParams, NavLink, Outlet } from "react-router-dom"
+import { getVan } from "../../../api.js"
 
 const HostVanDetail = () => {
 
-        const activeStyle = {
-            fontWeight: 900,
-            textDecoration: "underline"
-          }
-
     const { id } = useParams()
     const [currentVan, setCurrentVan] = React.useState(null)
+    const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
 
-    React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-        .then(res => res.json())
-        .then(data => setCurrentVan(data.vans))
-    }, [])
+    const activeStyle = {
+        fontWeight: 900,
+        textDecoration: "underline"
+      }
+
+      React.useEffect(() => {
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVan(id)
+                setCurrentVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadVans()
+    }, [id])
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
+
+    // React.useEffect(() => {
+    //     fetch(`/api/host/vans/${id}`)
+    //     .then(res => res.json())
+    //     .then(data => setCurrentVan(data.vans))
+    // }, [])
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
