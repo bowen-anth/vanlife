@@ -13,13 +13,17 @@ const VanDetail = () => {
     }, [params.id])
 
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
+
     return (
         <>
                 <NavLink
                 to={location.state.search ? `../?${location.state.search}` : ".."}
                 relative="path"
                 className="back-button"
-                    >&larr; <span>Back to all vans</span>
+                    >&larr; <span>{location.state.search ? `Back to ${capitalizeFirstLetter(van.type)} vans` : "Back to all vans"}</span>
                 </NavLink>
             <div className="van-detail-container">
                 {van ? (
@@ -30,7 +34,7 @@ const VanDetail = () => {
                         height="auto"
                         />
                         <div className="van-info-container">
-                            <button className={`van-type ${van.type} selected no-cursor`}>{van.type}</button>
+                            <button className={`van-type ${van.type} selected no-cursor`}>{capitalizeFirstLetter(van.type)}</button>
                             <h2>{van.name}</h2>
                             <p className="van-price">${van.price}<span className="day-span">/day</span></p>
                             <p className="van-description-p">{van.description}</p>
