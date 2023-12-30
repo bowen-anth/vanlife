@@ -1,10 +1,12 @@
 import React from "react"
-import { NavLink, useSearchParams } from "react-router-dom"
+import { NavLink, useSearchParams, Link } from "react-router-dom"
 
 const Vans = () => {
-
+    const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = React.useState([])
 
+    const typeFilter = searchParams.get("type")
+    console.log(searchParams.toString())
     React.useEffect(function() {
       console.log("Effect ran")
       fetch("/api/vans")
@@ -12,9 +14,9 @@ const Vans = () => {
         .then(data => setVanData(data.vans))
     }, [])
 
-    const [searchParams, setSearchParams] = useSearchParams()
+
     
-    const typeFilter = searchParams.get("type")
+
     
     const filteredVans = typeFilter
             ? vanData.filter(van => van.type === typeFilter)
@@ -28,10 +30,13 @@ const Vans = () => {
 
       <div className="vans-main-container" key={van.id}>
 
-      <NavLink 
+      <Link 
       className="link-no-decoration grow" 
       to={van.id}
-      state={{ search: searchParams.toString() }}
+    //   state={{ search: searchParams.toString() }}
+    state={{
+        search: searchParams.toString()
+        }}
       aria-label={`View details for ${van.name}, priced at $${van.price} per day`}
       >
          <img 
@@ -50,9 +55,8 @@ const Vans = () => {
                  </div>
              </div>
              <button className={`vans-button ${van.type}`}>{capitalizeFirstLetter(van.type)}</button>
-     </NavLink>
+     </Link>
  </div>
-
     )
   })
 
@@ -60,17 +64,19 @@ const Vans = () => {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
 
+    // function handleFilterChange(key, value) {
+    //     setSearchParams(prevParams => {
+    //         if (value === null) {
+    //             prevParams.delete(key)
+    //         } else {
+    //             prevParams.set(key, value)
+    //         }
+    //         return prevParams
+    //     })
+    // }
 
-        /**
-     * Challenge: access the search params in this component
-     * 1. Using the hook from react-router-dom, set a variable
-     *    called `searchParams`
-     * 2. Save the value of the `type` parameter (from the
-     *    `searchParams` object) to a variable called `typeFilter`
-     * 3. Log the value of the `typeFilter` to the console
-     */
+    // console.log(searchParams.toString())
 
-    // console.log('props', props)
     return (
         <>
         {vanData ? (

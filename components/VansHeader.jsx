@@ -6,6 +6,18 @@ const VansHeader = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get("type")
     console.log(typeFilter)
+
+    // function handleFilterChange(key, value) {
+    //     setSearchParams(prevParams => {
+    //         if (value === null) {
+    //             prevParams.delete(key)
+    //         } else {
+    //             prevParams.set(key, value)
+    //         }
+    //         return prevParams
+    //     })
+    // }
+console.log(searchParams)
     return (
         <>
             <div className="vansHeader-container">
@@ -15,6 +27,8 @@ const VansHeader = () => {
                         <button                                                              
                         className={typeFilter === "simple" ? "vansHeader-button simple selected" : "vansHeader-button simple-hover"}
                         onClick={() => setSearchParams({type: "simple"})}
+                        // onClick={() => handleFilterChange("type", "simple")}
+                        state={{ search: searchParams.toString()}}
                         >
                             Simple
                         </button>

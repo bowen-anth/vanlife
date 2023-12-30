@@ -1,10 +1,11 @@
 import React from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, NavLink, useLocation } from "react-router-dom"
 
 const VanDetail = () => {
     const params = useParams()
+    const location = useLocation()
+    console.log(location)
     const [van, setVan] = React.useState(null)
-
     React.useEffect(() => {
         fetch(`/api/vans/${params.id}`)
             .then(res => res.json())
@@ -14,11 +15,12 @@ const VanDetail = () => {
 
     return (
         <>
-                <Link
-                to=".."
+                <NavLink
+                to={location.state.search ? `../?${location.state.search}` : ".."}
                 relative="path"
                 className="back-button"
-            >&larr; <span>Back to all vans</span></Link>
+                    >&larr; <span>Back to all vans</span>
+                </NavLink>
             <div className="van-detail-container">
                 {van ? (
                     <div className="van-detail">
