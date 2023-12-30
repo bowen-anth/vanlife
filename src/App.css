@@ -679,6 +679,10 @@ line-height: 1.71275rem; /* 105.164% */
   text-decoration: underline;
 }
 
+.no-cursor {
+  cursor: inherit;
+}
+
 /* Host Vans Detail: End */
 
 /* Host Van Photos: Start */

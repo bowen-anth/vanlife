@@ -30,7 +30,7 @@ const VanDetail = () => {
                         height="auto"
                         />
                         <div className="van-info-container">
-                            <button className={`van-type ${van.type} selected`}>{van.type}</button>
+                            <button className={`van-type ${van.type} selected no-cursor`}>{van.type}</button>
                             <h2>{van.name}</h2>
                             <p className="van-price">${van.price}<span className="day-span">/day</span></p>
                             <p className="van-description-p">{van.description}</p>
