@@ -19,12 +19,15 @@ const VanDetail = () => {
 
     return (
         <>
+                {van && (
                 <NavLink
-                to={location.state.search ? `../?${location.state.search}` : ".."}
+                // to=".."
+                to={location.state ? `../?${location.state.search}` : ".."}
                 relative="path"
                 className="back-button"
-                    >&larr; <span>{location.state.search ? `Back to ${capitalizeFirstLetter(van.type)} vans` : "Back to all vans"}</span>
+                    >&larr; <span>{(location.state.search.length > 2) ? `Back to ${capitalizeFirstLetter(van.type)} vans` : "Back to all vans"}</span>
                 </NavLink>
+                )}
             <div className="van-detail-container">
                 {van ? (
                     <div className="van-detail">

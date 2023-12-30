@@ -35,6 +35,7 @@ console.log(searchParams)
                         <button 
                         className={typeFilter === "luxury" ? "vansHeader-button luxury selected" : "vansHeader-button luxury-hover"}
                         onClick={() => setSearchParams({type: "luxury"})}
+                        state={{ search: searchParams.toString()}}
                         >
                             Luxury
                         </button>
