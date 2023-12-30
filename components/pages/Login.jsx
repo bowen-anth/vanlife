@@ -1,5 +1,6 @@
 import React from "react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { loginUser } from "../../api.js"
 
 const Login = () => {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
@@ -8,7 +9,17 @@ const Login = () => {
     function handleSubmit(e) {
         e.preventDefault()
         console.log(loginFormData)
-    }
+
+        // loginUser(loginFormData)
+        //     .then(data => console.log(data))
+
+    
+        async function callLoginUser() {
+            const response = await loginUser(loginFormData)
+            console.log(response)
+        }
+        callLoginUser()
+}
 
     function handleChange(e) {
         const { name, value } = e.target
