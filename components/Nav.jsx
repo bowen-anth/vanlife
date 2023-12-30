@@ -7,6 +7,11 @@ const Nav = () => {
         fontWeight: 900,
         textDecoration: "underline"
       }
+
+      function fakeLogOut() {
+        localStorage.removeItem("loggedin")
+    }
+
     return (
         <>
                 <nav className="nav">
@@ -28,6 +33,7 @@ const Nav = () => {
                             />
                         </NavLink>
                     </div>
+                    <button onClick={fakeLogOut}>X</button>
                 </nav>
         </>
     )

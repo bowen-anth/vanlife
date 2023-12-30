@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate, useLocation, Navigate } from "react-router-dom"
 import { loginUser } from "../../api.js"
 
 const Login = () => {
@@ -9,6 +9,7 @@ const Login = () => {
 
     const location = useLocation()
     const navigate = useNavigate()
+    const from = location.state?.from || "/host"
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -19,7 +20,8 @@ const Login = () => {
             .then(data => {
                 console.log(data)
                 setError(null)
-                navigate("/host")
+                localStorage.setItem("loggedin", true)
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 setError(err)
