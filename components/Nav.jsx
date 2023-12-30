@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
+import imageUrl from "/assets/images/avatar-icon.svg"
 
 const Nav = () => {
     const activeStyle = {
@@ -20,6 +21,12 @@ const Nav = () => {
                         <NavLink className="link-styles nav-links" 
                         style={({isActive}) => isActive ? activeStyle : null}
                         to="vans">Vans</NavLink>
+                        <NavLink to="login" className="login-link">
+                            <img 
+                                src={imageUrl} 
+                                className="login-icon"
+                            />
+                        </NavLink>
                     </div>
                 </nav>
         </>
