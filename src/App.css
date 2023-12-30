@@ -817,4 +817,8 @@ line-height: 1.71275rem; /* 105.164% */
   font-family: "Inter", sans-serif;
 }
 
+.login-first {
+  color: red !important;
+}
+
 /* Login Page: End */
