@@ -1,16 +1,25 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import { getVans } from "../../../api.js"
 
 const HostVans = () => {
 
     const [hostVanData, setHostVanData] = React.useState([])
 
+    // React.useEffect(() => {
+    //     fetch("/api/host/vans")
+    //     .then(res => res.json())
+    //     .then(data => setHostVanData(data.vans))
+    // }, 
+    // [])
+
     React.useEffect(() => {
-        fetch("/api/host/vans")
-        .then(res => res.json())
-        .then(data => setHostVanData(data.vans))
-    }, 
-    [])
+        async function loadVans() {
+            const data = await getVans()
+            setHostVanData(data)
+        }
+        loadVans()
+    }, [])
  
 
     const hostVanCard = hostVanData.map(van => {

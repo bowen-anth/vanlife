@@ -1,20 +1,30 @@
 import React from "react"
 import { NavLink, useSearchParams, Link } from "react-router-dom"
+import { getVans } from "../../../api.js"
 
 const Vans = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = React.useState([])
+    const [loading, setLoading] = React.useState(false)
 
     const typeFilter = searchParams.get("type")
     console.log(searchParams.toString())
-    React.useEffect(function() {
-      console.log("Effect ran")
-      fetch("/api/vans")
-        .then(res => res.json())
-        .then(data => setVanData(data.vans))
+    // React.useEffect(function() {
+    //   console.log("Effect ran")
+    //   fetch("/api/vans")
+    //     .then(res => res.json())
+    //     .then(data => setVanData(data.vans))
+    // }, [])
+
+    React.useEffect(() => {
+        async function loadVans() {
+            setLoading(true)
+            const data = await getVans()
+            setVanData(data)
+            setLoading(false)
+        }
+        loadVans()
     }, [])
-
-
     
 
     
@@ -76,6 +86,10 @@ const Vans = () => {
     // }
 
     // console.log(searchParams.toString())
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
 
     return (
         <>
