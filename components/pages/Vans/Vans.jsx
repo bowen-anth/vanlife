@@ -6,9 +6,11 @@ const Vans = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = React.useState([])
     const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
 
     const typeFilter = searchParams.get("type")
     console.log(searchParams.toString())
+
     // React.useEffect(function() {
     //   console.log("Effect ran")
     //   fetch("/api/vans")
@@ -19,14 +21,19 @@ const Vans = () => {
     React.useEffect(() => {
         async function loadVans() {
             setLoading(true)
+            try {
             const data = await getVans()
             setVanData(data)
-            setLoading(false)
+            } catch(err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
         }
         loadVans()
     }, [])
     
-
+console.log(vanData)
     
     const filteredVans = typeFilter
             ? vanData.filter(van => van.type === typeFilter)
@@ -88,7 +95,11 @@ const Vans = () => {
     // console.log(searchParams.toString())
 
     if (loading) {
-        return <h1>Loading...</h1>
+        return <h1 aria-live="polite">Loading...</h1>
+    }
+
+    if (error) {
+        return <h1 aria-live="assertive">Error... {error.message}</h1>
     }
 
     return (
