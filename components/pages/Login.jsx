@@ -4,21 +4,39 @@ import { loginUser } from "../../api.js"
 
 const Login = () => {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const [status, setStatus] = React.useState("idle")
+    const [error, setError] = React.useState(null)
+
     const location = useLocation()
+    const navigate = useNavigate()
 
     function handleSubmit(e) {
         e.preventDefault()
+        setStatus("submitting")
         console.log(loginFormData)
 
-        // loginUser(loginFormData)
-        //     .then(data => console.log(data))
-
+        loginUser(loginFormData)
+            .then(data => {
+                console.log(data)
+                setError(null)
+                navigate("/host")
+            })
+            .catch(err => {
+                setError(err)
+            })
+            .finally(()=> {
+                setStatus("idle")
+            })
     
-        async function callLoginUser() {
-            const response = await loginUser(loginFormData)
-            console.log(response)
-        }
-        callLoginUser()
+        // async function callLoginUser() {
+           
+        //     const response = await loginUser(loginFormData)
+        //     .catch(err => setError(err))
+        //     console.log(response)
+        //     setStatus("idle")
+        //     setError("null")
+        // }
+        // callLoginUser()
 }
 
     function handleChange(e) {
@@ -32,8 +50,9 @@ const Login = () => {
     return (
         <>
             <div className="login-container">
-                {location.state?.message && <h1 className="login-first">{location.state.message}</h1>}
+                {location.state?.message && <h1 className="login-error">{location.state.message}</h1>}
                 <h1>Sign in to your account</h1>
+                {error?.message && <h1 className="login-error">{error.message}</h1>}
                 <form onSubmit={handleSubmit} className="login-form">
                     <input
                         name="email"
@@ -49,7 +68,9 @@ const Login = () => {
                         placeholder="Password"
                         value={loginFormData.password}
                     />
-                    <button>Log in</button>
+                    <button disabled={status === "submitting"}>
+                        {status === "submitting" ? "Logging in..." : "Log in"}
+                    </button>
                 </form>
             </div>
         </>
